@@ -1,0 +1,31 @@
+Voting Eligibility Checker:
+
+ Create a program that determines whether a person is eligible to vote in an election based on the following criteria:
+●	Age must be 18 or above.
+●	Must be a citizen of the country.
+●	Prompt the user to input their age, citizenship status (yes/no), and felony status (yes/no), and then use complex logical expressions to determine and output whether they are eligible to vote.
+
+int main() {
+    int age;
+    char citizenship, felony;
+
+    printf("Enter your age: ");
+    scanf("%d", &age);
+
+    printf("Are you a citizen of the country? (yes/no): ");
+    scanf(" %c", &citizenship);
+
+    printf("Have you committed any felonies? (yes/no): ");
+    scanf(" %c", &felony);
+
+    b= (age >= 18) && (citizenship == 'y' || citizenship == 'Y') && (felony == 'n' || felony == 'N');
+
+    if (eligible) {
+        printf("You are eligible to vote.\n");
+    } else {
+        printf("You are not eligible to vote.\n");
+    }
+
+    return 0;
+}
+

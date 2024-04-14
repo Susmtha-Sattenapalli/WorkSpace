@@ -1,0 +1,39 @@
+Fibonacci Sequence Generator:
+
+Write a program to generate the Fibonacci sequence up to a specified number of terms. The Fibonacci sequence starts with 0 and 1, and each subsequent number is the sum of the two preceding numbers (0, 1, 1, 2, 3, 5, 8, 13, ...). Prompt the user to enter the number of terms they want to generate and use a loop to calculate and output the sequence.
+
+
+
+void Fibonacci(int n) {
+    int prev = 0, curr = 1, next;
+
+    printf("Fibonacci sequence up to %d terms:\n", n);
+    printf("%d ", prev);
+
+    for (int i = 1; i < n; ++i) {
+        printf("%d ", curr);
+        next = prev + curr;
+        prev = curr;
+        curr = next;
+    }
+
+    printf("\n");
+}
+
+int main() {
+    int n;
+
+    printf("Enter the number: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Invalid input! Please enter a positive integer.);
+        return 1;
+    }
+
+    Fibonacci(n);
+
+    return 0;
+}
+
+

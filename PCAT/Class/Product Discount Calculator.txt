@@ -1,0 +1,33 @@
+Product Discount Calculator:
+
+Write a program that calculates the discount amount for a product based on the following criteria:
+●	If the product price is over $100 and the customer is a premium member, they get a 20% discount.
+●	If the product price is over $100 and the customer is not a premium member, they get a 10% discount.
+●	If the product price is $100 or less, there is no discount.
+●	Prompt the user to input the product price and their premium membership status, then use complex logical expressions to calculate and output the discount amount.
+
+int main() {
+    float price;
+    char Member;
+    printf("Enter the product price: ");
+    scanf("%f", &price);
+
+    printf("Are you a premium member? (yes/no): ");
+    scanf(" %c", &Member);
+    float discount = 0.0;
+
+    if (price > 100) {
+        if (Member == 'y' || Member == 'Y') {
+            discount = 0.2 * price; // 20% discount for premium members
+        } else {
+            discount = 0.1 * price; // 10% discount for non-premium members
+        }
+    }
+    if (discount > 0) {
+        printf("Discount amount: $%.2f\n", discount);
+    } else {
+        printf("No discount applicable.\n");
+    }
+
+    return 0;
+}

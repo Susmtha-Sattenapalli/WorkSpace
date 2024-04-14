@@ -1,0 +1,34 @@
+Health Insurance Plan Eligibility:
+
+Design a program that determines whether a person is eligible for a particular health insurance plan based on the following criteria:
+●	Age must be between 18 and 65.
+●	Must not have any pre-existing medical conditions.
+●	Must not have any recent hospitalizations (within the last 6 months).
+●	Prompt the user to input their age, medical condition status, and hospitalization status, then use complex logical expressions to determine and output whether they are eligible for the insurance plan.
+
+   
+ int main() {
+    int age;
+    char medicalCondition, hospitalization;
+    printf("Enter your age: ");
+    scanf("%d", &age);
+    printf("Do you have any pre-existing medical conditions? (yes/no): ");
+    scanf(" %c", &medicalCondition);
+    printf("Have you had any hospitalizations in the last 6 months? (yes/no): ");
+    scanf(" %c", &hospitalization);
+
+                     // Check eligibility based on criteria
+                     eligible = (age >= 18 && age <= 65) &&
+                    (medicalCondition == 'n' || medicalCondition == 'N') &&
+                    (hospitalization == 'n' || hospitalization == 'N');
+
+    // Output result
+    if (eligible) {
+        printf("You are eligible for the health insurance plan.\n");
+    } else {
+        printf("You are not eligible for the health insurance plan.\n");
+    }
+
+    return 0;
+}
+
