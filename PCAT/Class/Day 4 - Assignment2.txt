@@ -1,0 +1,32 @@
+Ticket Pricing:
+
+You are designing a ticket pricing program for a movie theater. The program should prompt the user for their age and the type of movie they want to watch (e.g., "regular" or "3D"). Based on the age and movie type, the program should calculate and output the ticket price according to the following rules:
+Regular Movie:
+Age < 18: $8
+Age >= 18: $12
+3D Movie:
+Age < 18: $10
+Age >= 18: $15
+has context menu
+
+import java.util.Scanner;
+
+public class TicketPricingProgram {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Please enter your age: ");
+        int age = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
+        
+        System.out.print("Please enter the type of movie (regular or 3D): ");
+        String movieType = scanner.nextLine().toLowerCase();
+        
+        int ticketPrice = (movieType.equals("regular")) ? (age < 18 ? 8 : 12) : (age < 18 ? 10 : 15);
+        
+        System.out.println("The ticket price is: $" + ticketPrice);
+        
+        scanner.close();
+    }
+}
+
