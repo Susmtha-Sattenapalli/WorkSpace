@@ -1,0 +1,58 @@
+1.Grade Calculator:
+
+You are tasked with creating a grade calculator program. The program should take a student's score as input and output their corresponding grade based on the following criteria:
+•	A: 90-100
+•	B: 80-89
+•	C: 70-79
+•	D: 60-69
+•	F: Below 60
+•	Ensure that if the input score is not within the range of 0 to 100, the program outputs an error message.
+•	 
+if(condition) && (condition) 
+
+import java.util.Scanner;
+
+public class Grades
+{
+    public static void main(String args[])
+    {
+    	
+        int marks[] = new int[6];
+        int i;
+        float total=0, avg;
+        Scanner scanner = new Scanner(System.in);
+		
+        
+        for(i=0; i<6; i++) { 
+           System.out.print("Enter Marks of Subject"+(i+1)+":");
+           marks[i] = scanner.nextInt();
+           total = total + marks[i];
+        }
+        scanner.close();
+        avg = total/6;
+        System.out.print("The student Grade is: ");
+        if(avg>=90 && avg<100)
+        {
+            System.out.print("A");
+        }
+        else if(avg>=80 && avg<90)
+        {
+           System.out.print("B");
+        } 
+        else if(avg>=70 && avg<80)
+        {
+            System.out.print("C");
+        }
+        else if(avg>=60 && avg<70)
+        {
+            System.out.print("D");
+        }
+Else 
+{
+
+   System.out.print(“F”);
+}
+
+    }
+}
+
