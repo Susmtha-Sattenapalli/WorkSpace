@@ -1,0 +1,34 @@
+Task 8: Advanced Array Operations
+
+a)  Implement a method SliceArray that takes an array, a starting index, and an end index, then returns a new array containing the elements from the start to the end index.
+
+import java.util.Arrays;
+
+public class SliceArray {
+    public static int[] sliceArray(int[] arr, int startIndex, int endIndex) {
+        
+        if (startIndex < 0 || endIndex >= arr.length || startIndex > endIndex) {
+            throw new IllegalArgumentException("Invalid start or end index");
+        }
+
+        int length = endIndex - startIndex + 1;
+
+        int[] slicedArray = new int[length];
+
+        for (int i = 0; i < length; i++) {
+            slicedArray[i] = arr[startIndex + i];
+        }
+
+        return slicedArray;
+    }
+
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5, 6, 7};
+        int startIndex = 2;
+        int endIndex = 5;
+
+        int[] slicedArray = sliceArray(array, startIndex, endIndex);
+
+        System.out.println("Sliced array: " + Arrays.toString(slicedArray)); 
+    }
+}
